@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login:hover {
+    transform: translateY(-10px);
+}
+
+h1 {
+    margin-bottom: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-section label {
+    text-align: left;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.input-section input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-section input:focus {
+    border-color: #6e8efb;
+    outline: none;
+}
+
+.register-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.input-section button {
+    background-color: #6e8efb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.input-section button:hover {
+    background-color: #4BB543;
+    transform: translateY(-2px);
+}
+
+.input-section button:active {
+    background-color: #2a65c7;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -9px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #aaaaaa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+}
+
+/* button:hover {
+    background-color: #4BB543;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #2a65c7;
+} */

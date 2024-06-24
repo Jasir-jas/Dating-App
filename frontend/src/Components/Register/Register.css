@@ -1,0 +1,108 @@
+.register {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.register h1 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.register-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.register-input-section label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.register-input-section input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.login-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.register-input-section input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.register-input-section button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-input-section button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin: 20px 0;
+    color: #777;
+}
+
+p span {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.google-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.google-login img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.google-login button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background-color: #db4437;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.google-login button:hover {
+    background-color: #c23321;
+}
+
+.google-login img {
+    margin-right: 8px;
+}
+.error-message {
+    color: red;
+}
