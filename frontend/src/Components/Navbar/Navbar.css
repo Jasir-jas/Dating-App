@@ -1,0 +1,134 @@
+/* General reset */
+/* General reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    background: linear-gradient(135deg, #5a75e8, #8a64c6);
+    /* Slightly darker gradient for the navbar */
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.navbar-logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 60%;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    /* White text for better contrast */
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffeb3b;
+    /* Yellow color on hover for a nice contrast */
+}
+.username {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    margin-right: 300px;
+    
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.logout-button:hover {
+    color: #ffeb3b;
+    background: none;
+    /* Yellow color on hover for a nice contrast */
+}
+
+.nav-avatar {
+    margin-left: 20px;
+}
+
+.avatar-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Mobile menu icon */
+.navbar-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar-menu-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: linear-gradient(135deg, #5a75e8, #8a64c6);
+        /* Match navbar background */
+        border-top: 1px solid #eee;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .navbar-menu-icon {
+        display: block;
+    }
+}

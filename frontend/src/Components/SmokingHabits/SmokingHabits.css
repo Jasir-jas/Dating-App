@@ -1,0 +1,61 @@
+.smoking-habits {
+    max-width: 400px;
+    /* margin-top: 100px; */
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.smoking-habits h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.smoking-options {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.smoking-options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+    font-weight: 700;
+}
+
+.smoking-options input[type="radio"] {
+    margin-right: 12px;
+}
+
+.smoking-options input[type="radio"]:focus {
+    outline: 2px solid #007BFF;
+}
+
+.smoking-options input[type="radio"]:checked {
+    accent-color: #007BFF;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './Register.css'
 import googleIcon from '../../imageIcon/googleIcon.png'
@@ -13,6 +13,29 @@ function Register() {
         confirm_password: ""
     })
     const [message, setMessage] = useState("")
+
+    useEffect(()=>{
+        if(message){
+            const timer = setTimeout(()=>{
+                setMessage("")
+            },2000)
+            return ()=> clearTimeout(timer)
+        }
+    },[message])
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        console.log(`URL: ${window.location.href}`); // Log the entire URL
+        console.log(`Token from URL: ${token}`); // Log the token
+    
+        if (token) {
+          localStorage.setItem('token', token);
+          window.location.replace('/shortlong');
+        } else {
+          console.log('Token not found in URL');
+        }
+      }, []);
 
     const handleGoogle = () => {
         window.open('http://localhost:4000/auth/google', '_self');
@@ -31,13 +54,14 @@ function Register() {
 
         if (form.password !== form.confirm_password) {
             console.log("Password don't match");
+            setMessage("Password don't match")
             return
         }
         try {
             const response = await axios.post("http://localhost:4000/register", {
                 name,
                 email,
-                password,
+                password        
             })
             console.log("Response:", response);
             setMessage(response.data.message)

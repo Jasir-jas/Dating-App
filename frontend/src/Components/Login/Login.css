@@ -2,19 +2,21 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background: linear-gradient(135deg, #6e8efb, #a777e3);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    align-items: center; */
+    /* height: 100vh;
+    margin: 0; */
 }
 
 .login {
     background: #ffffff;
+    margin-top: 70px;
+    margin-left: 550PX;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 400px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
 }
