@@ -79,7 +79,7 @@ body {
 
 .logout-button:hover {
     color: #ffeb3b;
-    background: none;
+    background: none !important
     /* Yellow color on hover for a nice contrast */
 }
 

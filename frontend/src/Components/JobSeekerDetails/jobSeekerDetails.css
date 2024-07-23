@@ -1,0 +1,110 @@
+/* Container for the entire form */
+.jobseeker-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+/* Styling for each input container */
+.jobseeker-title-container,
+.expertise-level-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+h1{
+    font-size: 24px;
+}
+
+/* Label styling */
+.jobseeker-title-container label,
+.expertise-level-container label {
+    margin-bottom: 21px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input field styling */
+.title-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+.title-input:focus {
+    border: 1px solid #a8a8a8 !important;
+    outline: none;
+
+}
+
+/* Change border color on focus */
+.title-input:focus {
+    border-color: #007bff;
+    outline: none;
+    /* Remove default outline */
+}
+
+/* Styling for radio buttons and their labels */
+.expertise-level-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.expertise-level-container div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.expertise-level-container input[type="radio"] {
+    justify-self: start;
+
+    margin-right: 10px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+    .jobseeker-details {
+        padding: 15px;
+    }
+
+    .title-input {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

@@ -1,43 +1,66 @@
-import React, { useState } from 'react'
-import './ShortLong.css'
+import React, { useState } from 'react';
+import './ShortLong.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function ShortLong() {
-    const [selectOption, setSelectOption] = useState("")
+    const navigate = useNavigate();
+    const [selectOption, setSelectOption] = useState("");
+    const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
 
+    const handleChange = (e) => {
+        setSelectOption(e.target.value);
+    };
 
-    const handleSubmit = ()=>{
-        if(selectOption === 'dating'){
-            window.location.replace('/')
-        }else{
-            window.location.href('/matrimony')
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const token = localStorage.getItem('token');
+            const response = await axios.post("http://localhost:4000/shortlong", { userRelationStatus: selectOption }, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (response.data.success) {
+                setMessage(response.data.message);
+                navigate('/genderview');
+            }
+        } catch (error) {
+            console.log("Data not Saved, please try again.");
+            setError("Data not Saved, please try again.");
         }
-    }
-
+    };
 
     return (
-        <div className="short-long">
-            <h1>Do you want Short Time or Long Time?</h1>
-            <div className="checkbox">
+        <form className="short-long" onSubmit={handleSubmit}>
+            <h1>Do you want Short Term or Long Term?</h1>
+            <div className="checkbox-container">
+
                 <div className="checkbox-item">
                     <input type="radio" id="dating"
                         value="dating" name="time"
                         checked={selectOption === 'dating'}
-                        onChange={(e) => setSelectOption(e.target.value)}
+                        onChange={handleChange}
                     />
-                    <p>Short Time [Redirect to Dating App]</p>
+                    <p>Short term Relationship [Dating App]</p>
                 </div>
                 <div className="checkbox-item">
                     <input type="radio" id="matrimony"
                         value="matrimony" name="time"
                         checked={selectOption === 'matrimony'}
-                        onChange={(e)=>setSelectOption(e.target.value)}
+                        onChange={handleChange}
                     />
-                    <p>Long Time [Redirect to Matrimony App]</p>
+                    <p>Long term [Matrimony App]</p>
                 </div>
             </div>
-            <button type="button" className="ok-btn" onClick={handleSubmit}>Ok</button>
-        </div>
-    )
+            <button type="submit" className="ok-btn">Next</button>
+            {message && <p style={{ color: 'green' }}>{message}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+        </form>
+    );
 }
 
-export default ShortLong
+export default ShortLong;

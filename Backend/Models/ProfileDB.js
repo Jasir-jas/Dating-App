@@ -1,10 +1,9 @@
-const mongoose = require("mongoose")
-const User = require("./User")
+const mongoose = require("mongoose");
 
 const profileSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: User,
+        ref: 'User',
         required: true
     },
     age: {
@@ -35,14 +34,26 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    profile_image_url: {
+    profile_image_urls: {
         type: String,
         required: true
+    },
+    profile_image_url1: {
+        type: String,
+        required: true
+    },
+    profile_image_url2: {
+        type: String,
+        required: true
+    },
+    profile_video_urls: {
+        type: String,
     },
     email: {
         type: String,
         required: true,
         unique: true
     }
-})
-module.exports = mongoose.model('Profile', profileSchema)
+});
+
+module.exports = mongoose.model('Profile', profileSchema);

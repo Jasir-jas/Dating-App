@@ -30,14 +30,6 @@ const SmokingHabits = ({ onSubmit }) => {
                     Yes
                 </label>
 
-                {/* <label htmlFor="planning_to_quit">
-                    <input type="radio" value="Planning to quit" id='planning_to_quit'
-                        checked={smokingHabits === 'Planning to quit'}
-                        onChange={() => setSmokingHabits('Planning to quit')}
-                    />
-                    Planning to quit
-                </label> */}
-
             </div>
             <button type="submit">Next</button>
         </form>

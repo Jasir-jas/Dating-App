@@ -1,0 +1,59 @@
+.profile-video {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.profile-video h1{
+    font-size: 24px;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+
+.video-upload {
+    cursor: pointer;
+}
+
+.preview-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.preview-video {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.skip-btn{
+    text-decoration: none;
+    color: white;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+.error-message {
+    margin-top: 10px;
+    color: red;
+} 

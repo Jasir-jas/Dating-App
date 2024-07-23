@@ -1,0 +1,28 @@
+/* Message.css */
+
+.message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+}
+
+.other-message {
+    background-color: #E0E0E0;
+    align-self: flex-start;
+}
+
+.message-content {
+    padding: 8px;
+}
+
+.message-text {
+    font-size: 14px;
+    color: #333;
+}

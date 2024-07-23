@@ -1,7 +1,23 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    name: String,
+    name: { type: String, required: true },
+    profile: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Profile',
+    },
+    employee: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Employee',
+    },
+    friendRequests: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'FriendRequest',
+    }],
+    friends: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
     email: {
         type: String,
         unique: true,
@@ -10,6 +26,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
+        required: true,
     },
     googleId: {
         type: String,
@@ -20,15 +37,15 @@ const userSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    shortlist: [{
+        type: mongoose.Schema.Types.ObjectId,
+        refPath: 'shortlistModel'
+    }],
+    shortlistModel: {
+        type: [String],
+        enum: ['Profile', 'Employee'] // Ensure all possible types are listed here
     }
-})
+});
 
-// Method to generate authentication token
-// userSchema.methods.generateAuthToken = async function () {
-//     const user = this;
-//     const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET_KEY);
-//     user.tokens = user.tokens.concat({ token });
-//     await user.save();
-//     return token;
-// };
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('User', userSchema);

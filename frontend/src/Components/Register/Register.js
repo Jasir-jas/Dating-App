@@ -14,28 +14,28 @@ function Register() {
     })
     const [message, setMessage] = useState("")
 
-    useEffect(()=>{
-        if(message){
-            const timer = setTimeout(()=>{
+    useEffect(() => {
+        if (message) {
+            const timer = setTimeout(() => {
                 setMessage("")
-            },2000)
-            return ()=> clearTimeout(timer)
+            }, 2000)
+            return () => clearTimeout(timer)
         }
-    },[message])
+    }, [message])
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const token = urlParams.get('token');
         console.log(`URL: ${window.location.href}`); // Log the entire URL
         console.log(`Token from URL: ${token}`); // Log the token
-    
+
         if (token) {
-          localStorage.setItem('token', token);
-          window.location.replace('/shortlong');
+            localStorage.setItem('token', token);
+            window.location.replace('/shortlong');
         } else {
-          console.log('Token not found in URL');
+            console.log('Token not found in URL');
         }
-      }, []);
+    }, []);
 
     const handleGoogle = () => {
         window.open('http://localhost:4000/auth/google', '_self');
@@ -61,19 +61,19 @@ function Register() {
             const response = await axios.post("http://localhost:4000/register", {
                 name,
                 email,
-                password        
+                password
             })
             console.log("Response:", response);
             setMessage(response.data.message)
-            if(response.data.success){
+            if (response.data.success) {
                 window.location.replace("/login")
-            }else{
+            } else {
                 setMessage(response.data.message)
             }
         } catch (error) {
             setMessage(error.response.data.message)
         }
-        
+
     }
 
     return (
@@ -93,15 +93,16 @@ function Register() {
                 <label htmlFor="confirm_password">Re-Enter Password:</label>
                 <input type="password" name='confirm_password' value={form.confirm_password} onChange={handleChange} />
 
-                <button type='submit' onClick={handleSubmit}>Register</button>
+                <button type='submit' onClick={handleSubmit} className='register-btn'>Register</button>
             </div>
             <p>If You Have Alredy Account? <Link to='/login' className='login-link'>Login</Link></p>
-
-            <img src={googleIcon} alt="" />
-            <button type='button' onClick={handleGoogle}>Login with Google</button>
-            {
-                message && <p className='error-message'>{message}</p>
-            }
+            <div className="google-login">
+                <img src={googleIcon} alt="" />
+                <button type='button' onClick={handleGoogle} className='google-btn'>Login with Google</button>
+                {
+                    message && <p className='error-message'>{message}</p>
+                }
+            </div>
 
         </form>
     )

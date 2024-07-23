@@ -1,0 +1,67 @@
+/* Container for the form */
+/* Container for the form */
+.employee-jobseeker {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+/* Form title */
+.employee-jobseeker h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container for the radio buttons */
+.employee-jobseeker-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    /* margin-bottom: 40px; */
+}
+
+/* Label styling */
+.employee-label,
+.jobseeker-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #555;
+    align-self: center;
+    margin-top: -6px;
+    /* gap: 15px; */
+}
+
+/* Radio button styling */
+.employee-radio,
+.jobseeker-radio {
+    justify-self: start;
+}
+
+/* Button styling */
+.employee-job-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.employee-job-btn:hover {
+    background-color: #0056b3;
+}
